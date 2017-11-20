@@ -39,7 +39,7 @@ db.createUser(
 
 * Create a collection
 
-```
+```json
 db.createCollection('collectionName');
   {
       "ok": 1
@@ -48,15 +48,43 @@ db.createCollection('collectionName');
 
 * Show collections with `show collections`.
 * Insert into a collection. 
-```
+```json
 db.customername.insert (
     {
         first_name: "John"
+    },
+    {
+        first_name: "Jane",
+        last_name: "Foster",
+        gender: "Female",
     }
 );
 ```
 
-* Look at the data in a collection with `db.customername.find()`. 
+* Look at the data in a collection with  `db.customername.find().pretty();`
+* Updating existing data with
+```json
+db.customers.update(
+  {
+        first_name: "John"
+        last_name: "Smith"
+        gender: "Male"
+    }
+);
+```
+
+```json
+db.customers.update(
+    {
+        first_name: "Steven"
+    },
+    {
+        $set: {
+        gender: "male"
+        }
+    }
+);
+```
 
 ### Database Queries
 ```json
