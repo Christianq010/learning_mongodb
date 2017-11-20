@@ -20,3 +20,23 @@ mongod --directoryperdb --dbpath C:/mongodb/data/db --logpath C:/mongodb/log/mon
 * To Run our shell -  `mongo`
   * In the Shell - `cls` - to clear the screen
   * To show a list of db's - `show dbs`
+  * Check the current db we are in - `db`
+  * To create new db - `use databaseName`
+
+
+### Database Queries
+```json
+    {
+        first_name: "John",
+        last_name: "Doe",
+        memberships: ["mem1","mem2"],
+        address: {
+            street: "4 main st",
+            city: "Boston"
+        }
+        contacts: [
+            {name: "Brad", relationship: "friend"},
+        ]
+    }
+
+```
