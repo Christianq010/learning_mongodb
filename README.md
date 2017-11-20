@@ -23,6 +23,40 @@ mongod --directoryperdb --dbpath C:/mongodb/data/db --logpath C:/mongodb/log/mon
   * Check the current db we are in - `db`
   * To create new db - `use databaseName`
 
+### Create
+* Create a User
+
+```json
+use databaseName
+db.createUser(
+  {
+    user: "Chris",
+    pwd: "1234",
+    roles: [ "readWrite", "dbAdmin"]
+  }
+);
+```
+
+* Create a collection
+
+```
+db.createCollection('collectionName');
+  {
+      "ok": 1
+  }
+```
+
+* Show collections with `show collections`.
+* Insert into a collection. 
+```
+db.customername.insert (
+    {
+        first_name: "John"
+    }
+);
+```
+
+* Look at the data in a collection with `db.customername.find()`. 
 
 ### Database Queries
 ```json
@@ -38,5 +72,4 @@ mongod --directoryperdb --dbpath C:/mongodb/data/db --logpath C:/mongodb/log/mon
             {name: "Brad", relationship: "friend"},
         ]
     }
-
 ```
