@@ -23,7 +23,7 @@ mongod --directoryperdb --dbpath C:/mongodb/data/db --logpath C:/mongodb/log/mon
   * Check the current db we are in - `db`
   * To create new db - `use databaseName`
 
-### Create
+### CRUD Operations
 * Create a User
 
 ```json
@@ -83,6 +83,21 @@ db.customers.update(
         gender: "male"
         }
     }
+);
+```
+
+* Remove / Delete a row
+```json
+db.customers.update(
+    {
+        first_name: "John"
+    },
+    {
+        $unset: {
+            age: 1
+        }
+    }
+
 );
 ```
 
